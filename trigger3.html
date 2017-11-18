@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+div#box1{
+	background: #9DCEFF;
+	width: 400px;
+	height: 200px;
+	position: absolute;
+	top: 100px;
+	left: -400px;
+}
+</style>
+<script>
+function slideIn(el){
+	var elem = document.getElementById(el);
+	elem.style.transition = "left 1.0s linear 0s"; //linear animation
+	elem.style.left = "0px";
+}
+function slideOut(el){
+	var elem = document.getElementById(el);
+	elem.style.transition = "left 0.5s linear 0s"; // linear animation
+	elem.style.left = "-400px";
+}
+</script>
+</head>
+<body>
+	<button onclick="slideIn('box1');">Slide in</button>
+	<button onclick="slideOut('box1');">Slide out</button>
+
+	<button onmouseover="slideIn('box1');">Mouse over Slide in</button>
+	<button onmouseover="slideOut('box1');">Mouse over Slide out</button>
+<div id="box1">Content in box 1 ...</div>
+</body>
+<html>

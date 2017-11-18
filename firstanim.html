@@ -1,0 +1,26 @@
+<DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+canvas {border:#666 1px solid;}
+</style>
+<script type="application/javascript" language="javascript">
+function draw(x,y){
+	var canvas = document.getElementById('canvas'); // reference
+	var ctx = canvas.getContext('2d'); // establish a 2D context
+	ctx.save(); // save the canvas state if required
+	ctx.clearRect(0,0,550,400); // clear the canvas for redraw
+	ctx.fillStyle = "rgba(0,200,0,1)"; // style for a green box
+	ctx.fillRect (x,20,50,50); // draw the rectangle
+	ctx.restore (); // restore the canvas state if saved
+	x += 2; // increment the x position by some numeric value
+	var loopTimer = setTimeout ('draw('+x+','+y+')',20); // animate the draw function
+}
+</script>
+</head>
+<body>
+	<button onclick="draw(0,0)">Draw</button>
+<canvas id="canvas" width="550" height="400">
+</canvas>
+</body>
+</html>

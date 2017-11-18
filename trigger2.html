@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+div#box1{
+	background: #9DCEFF;
+	width: 400px;
+	height: 200px;
+	overflow: hidden; // to hide the Content in box 1 as slided
+}
+</style>
+<script>
+function slideClosed(el){
+	var elem = document.getElementById(el);
+	elem.style.transition = "height 0.5s linear 0s"; //linear animation
+	elem.style.height = "0px";
+}
+function slideOpen(el){
+	var elem = document.getElementById(el);
+	elem.style.transition = "height 0.5s linear 0s"; //linear animation
+	elem.style.height = "200px";
+}
+</script>
+</head>
+<body>
+	<button onclick="slideClosed('box1');">Slide closed</button>
+	<button onclick="slideOpen('box1');">Slide open</button>
+<div id="box1">Content in box 1 ...</div>
+</body>
+<html>
